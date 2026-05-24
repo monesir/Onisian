@@ -298,7 +298,9 @@ header {
     background-clip: padding-box;
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 20px;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 70vh;
     transform: translateZ(0);
     padding: 2rem;
     backdrop-filter: blur(15px);
@@ -313,7 +315,19 @@ header {
     opacity: 1;
     transform: translateY(0);
     position: relative;
-    overflow: hidden;
+}
+
+/* Custom Scrollbar for Progress Card */
+.progress-card::-webkit-scrollbar {
+    width: 6px;
+}
+.progress-card::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+}
+.progress-card::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
 }
 
 /* Gradient overlay so the bars at the bottom are readable */
@@ -437,7 +451,7 @@ header {
 .games-library {
     padding: 0 5% 4rem 5%;
     background-color: transparent;
-    margin-top: -250px; /* Pull it up over the hero section */
+    margin-top: -100px; /* Pull it up over the hero section */
     position: relative;
     z-index: 10;
 }
